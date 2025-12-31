@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis JTExpress - Marketing Digital</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .page {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 40px 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #2563eb;
+        }
+        
+        .logo-section {
+            flex: 1;
+        }
+        
+        .company-name {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .tagline {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.8;
+        }
+        
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .devis-info {
+            text-align: right;
+        }
+        
+        .devis-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .devis-meta {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+        
+        .devis-number {
+            font-weight: 600;
+            color: #2563eb;
+            font-size: 14px;
+        }
+        
+        .section {
+            margin: 35px 0;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .client-box {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .client-box p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        .client-box strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        .intro-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #475569;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .prestation {
+            margin: 30px 0;
+            padding: 25px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        
+        .prestation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+        
+        .prestation-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .prestation-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .prestation-description {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .livrables-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .livrables-list li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 13px;
+            color: #475569;
+        }
+        
+        .livrables-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .total-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .total-table th {
+            background: #1e293b;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .total-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        .total-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .subtotal-row {
+            background: #f8fafc;
+            font-weight: 600;
+        }
+        
+        .total-row {
+            background: #2563eb;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .total-row td {
+            color: white;
+            border-bottom: none;
+        }
+        
+        .amount-words {
+            text-align: right;
+            font-style: italic;
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        
+        .timeline {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .timeline-item {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
+            border-radius: 50%;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .payment-box {
+            background: #f8fafc;
+            border: 2px solid #2563eb;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .payment-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+        }
+        
+        .payment-title {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .payment-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2563eb;
+            margin: 5px 0;
+        }
+        
+        .payment-details {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .conditions-box {
+            background: #fefce8;
+            border-left: 4px solid #eab308;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #713f12;
+        }
+        
+        .conditions-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #854d0e;
+        }
+        
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            gap: 30px;
+        }
+        
+        .signature-box {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        
+        .signature-title {
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 60px;
+            font-size: 15px;
+        }
+        
+        .signature-line {
+            border-top: 2px solid #1e293b;
+            padding-top: 10px;
+            font-size: 12px;
+            color: #64748b;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+        
+        .input-field {
+            border: none;
+            border-bottom: 2px solid #cbd5e1;
+            background: transparent;
+            padding: 5px 10px;
+            font-size: 14px;
+            color: #1e293b;
+            width: calc(100% - 180px);
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-bottom-color: #2563eb;
+        }
+        
+        .input-field::placeholder {
+            color: #94a3b8;
+        }
+        
+        .signature-input {
+            width: 100%;
+            min-height: 80px;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 13px;
+            color: #64748b;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            margin: 20px 0;
+            resize: none;
+        }
+        
+        .signature-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            border-style: solid;
+        }
+        
+        .date-input {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #1e293b;
+            font-family: 'Inter', sans-serif;
+            margin: 10px 0;
+            width: 100%;
+        }
+        
+        .date-input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .page {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- En-tête -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="company-name">JTExpress</div>
+                <div class="tagline">Marketing Digital & Communication</div>
+                <div class="contact-info">
+                    <a href="https://www.jtexpress-group.com">www.jtexpress-group.com</a><br>
+                    <a href="mailto:contact@jtexpress-group.com">contact@jtexpress-group.com</a><br>
+                    +225 0758736385
+                </div>
+            </div>
+            <div class="devis-info">
+                <div class="devis-title">DEVIS</div>
+                <div class="devis-meta">
+                    <div class="devis-number">N° DEV-2024-001</div>
+                    <div>Date : 31 Décembre 2024</div>
+                    <div>Validité : 30 jours</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informations client -->
+        <div class="section">
+            <div class="section-title">Informations Client</div>
+            <div class="client-box">
+                <p><strong>Raison sociale :</strong> <input type="text" class="input-field" value="Elite Centrale d'Achats" placeholder="Nom de l'entreprise"></p>
+                <p><strong>Contact :</strong> <input type="text" class="input-field" placeholder="Nom du représentant"></p>
+                <p><strong>Email :</strong> <input type="email" class="input-field" placeholder="email@entreprise.com"></p>
+                <p><strong>Téléphone :</strong> <input type="tel" class="input-field" placeholder="+225 XX XX XX XX XX"></p>
+                <p><strong>Adresse :</strong> <input type="text" class="input-field" placeholder="Adresse complète"></p>
+            </div>
+        </div>
+
+        <!-- Objet -->
+        <div class="section">
+            <div class="section-title">Objet du Devis</div>
+            <div class="intro-text">
+                Accompagnement marketing digital complet visant à développer la notoriété de votre entreprise, acquérir de nouveaux clients et partenaires stratégiques, et générer du chiffre d'affaires à travers une présence professionnelle optimisée sur LinkedIn.
+            </div>
+        </div>
+
+        <!-- Prestations -->
+        <div class="section">
+            <div class="section-title">Prestations Proposées</div>
+            
+            <div class="prestation">
+                <div class="prestation-header">
+                    <div class="prestation-title">1. CRÉATION ET OPTIMISATION LINKEDIN</div>
+                    <div class="prestation-price">150 000 FCFA</div>
+                </div>
+                <div class="prestation-description">
+                    Mise en place complète de votre présence professionnelle sur LinkedIn avec tous les éléments nécessaires pour maximiser votre visibilité et votre crédibilité.
+                </div>
+                <ul class="livrables-list">
+                    <li>Création du profil entreprise LinkedIn de A à Z</li>
+                    <li>Optimisation SEO complète du profil</li>
+                    <li>Configuration avancée des paramètres</li>
+                    <li>Création de bannière et visuels professionnels</li>
+                    <li>Rédaction optimisée de la page "À propos"</li>
+                    <li>Paramétrage de la visibilité et notifications</li>
+                </ul>
+            </div>
+
+            <div class="prestation">
+                <div class="prestation-header">
+                    <div class="prestation-title">2. STRATÉGIE DE CONTENU (1 MOIS)</div>
+                    <div class="prestation-price">200 000 FCFA</div>
+                </div>
+                <div class="prestation-description">
+                    Élaboration et mise en œuvre d'une stratégie de contenu professionnelle sur mesure pour positionner votre entreprise comme un acteur incontournable.
+                </div>
+                <ul class="livrables-list">
+                    <li>Élaboration d'une stratégie éditoriale personnalisée</li>
+                    <li>Création de 12 publications professionnelles (3/semaine)</li>
+                    <li>Création de 12 visuels et infographies sur-mesure</li>
+                    <li>Planification et programmation stratégique</li>
+                    <li>Optimisation hashtags et portée organique</li>
+                    <li>Calendrier éditorial détaillé du mois</li>
+                </ul>
+            </div>
+
+            <div class="prestation">
+                <div class="prestation-header">
+                    <div class="prestation-title">3. COMMUNITY MANAGEMENT (1 MOIS)</div>
+                    <div class="prestation-price">180 000 FCFA</div>
+                </div>
+                <div class="prestation-description">
+                    Gestion quotidienne et professionnelle de votre présence LinkedIn pour maximiser l'engagement et convertir les interactions en opportunités business.
+                </div>
+                <ul class="livrables-list">
+                    <li>Gestion quotidienne de votre page (7j/7)</li>
+                    <li>Réponse aux messages sous 24h</li>
+                    <li>Modération et réponse aux commentaires</li>
+                    <li>Développement ciblé du réseau professionnel</li>
+                    <li>Engagement avec prospects et partenaires</li>
+                    <li>Rapport mensuel détaillé avec analytics</li>
+                    <li>Recommandations stratégiques</li>
+                </ul>
+            </div>
+
+            <div class="prestation">
+                <div class="prestation-header">
+                    <div class="prestation-title">4. FORMATION LINKEDIN</div>
+                    <div class="prestation-price">70 000 FCFA</div>
+                </div>
+                <div class="prestation-description">
+                    Session de formation intensive pour vous rendre autonome dans l'utilisation professionnelle de LinkedIn.
+                </div>
+                <ul class="livrables-list">
+                    <li>Session de formation de 2 heures</li>
+                    <li>Bonnes pratiques LinkedIn B2B</li>
+                    <li>Techniques de prospection avancées</li>
+                    <li>Guide de référence personnalisé</li>
+                    <li>Support post-formation (15 jours)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Récapitulatif -->
+        <div class="section">
+            <div class="section-title">Récapitulatif Financier</div>
+            <table class="total-table">
+                <thead>
+                    <tr>
+                        <th>Désignation</th>
+                        <th style="text-align: right; width: 150px;">Montant</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Création et optimisation LinkedIn</td>
+                        <td style="text-align: right;">150 000 FCFA</td>
+                    </tr>
+                    <tr>
+                        <td>Stratégie de contenu (1 mois)</td>
+                        <td style="text-align: right;">200 000 FCFA</td>
+                    </tr>
+                    <tr>
+                        <td>Community Management (1 mois)</td>
+                        <td style="text-align: right;">180 000 FCFA</td>
+                    </tr>
+                    <tr>
+                        <td>Formation LinkedIn</td>
+                        <td style="text-align: right;">70 000 FCFA</td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td><strong>SOUS-TOTAL HT</strong></td>
+                        <td style="text-align: right;"><strong>600 000 FCFA</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TOTAL TTC</strong></td>
+                        <td style="text-align: right;"><strong>600 000 FCFA</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="amount-words">Montant en lettres : Six cent mille francs CFA</div>
+        </div>
+
+        <!-- Planning -->
+        <div class="section">
+            <div class="section-title">Calendrier de Réalisation</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">SEMAINE 1 - Lancement</div>
+                    <div class="timeline-content">
+                        Création et configuration complète du compte LinkedIn • Formation de 2 heures • Validation de la stratégie de contenu
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">SEMAINES 2-4 - Déploiement</div>
+                    <div class="timeline-content">
+                        Mise en ligne de 12 publications stratégiques • Community management quotidien • Développement actif du réseau • Engagement prospects et partenaires
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">FIN DU MOIS 1 - Bilan</div>
+                    <div class="timeline-content">
+                        Rapport complet de performance avec KPIs • Analyse des résultats • Recommandations stratégiques pour la suite
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paiement -->
+        <div class="section">
+            <div class="section-title">Conditions de Paiement</div>
+            <div class="payment-box">
+                <div class="payment-item">
+                    <div class="payment-title">📌 Acompte de 50% à la signature</div>
+                    <div class="payment-amount">300 000 FCFA</div>
+                    <div class="payment-details">
+                        Déclenchement : Dès validation et signature du devis<br>
+                        Permet de lancer immédiatement les prestations
+                    </div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-title">📌 Solde de 50% à la livraison</div>
+                    <div class="payment-amount">300 000 FCFA</div>
+                    <div class="payment-details">
+                        Déclenchement : Fin du premier mois après livraison du rapport<br>
+                        Valide la satisfaction et clôture la prestation
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conditions-box">
+                <div class="conditions-title">💳 Moyens de paiement acceptés</div>
+                Virement bancaire • Mobile Money (Orange Money, MTN Money, Moov Money) • Chèque à l'ordre de JTExpress • Espèces avec reçu officiel
+            </div>
+        </div>
+
+        <!-- Signatures -->
+        <div class="signature-section">
+            <div class="signature-box">
+                <div class="signature-title">Pour JTExpress</div>
+                <input type="date" class="date-input" placeholder="Date">
+                <textarea class="signature-input" placeholder="Signature électronique ou imprimer pour signer à la main"></textarea>
+                <div class="signature-line">
+                    Cachet de l'entreprise
+                </div>
+            </div>
+            <div class="signature-box">
+                <div class="signature-title">Bon pour accord - Le Client</div>
+                <input type="date" class="date-input" placeholder="Date">
+                <textarea class="signature-input" placeholder="Signature électronique ou mention 'Lu et approuvé'"></textarea>
+                <div class="signature-line">
+                    <input type="text" class="input-field" placeholder="Nom et fonction" style="width: 100%; text-align: center;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <strong>JTExpress</strong> • Marketing Digital & Communication<br>
+            www.jtexpress-group.com • contact@jtexpress-group.com • +225 0758736385<br>
+            Ce devis est valable 30 jours. Passé ce délai, les tarifs sont susceptibles d'être révisés.
+        </div>
+    </div>
+
+    <script>
+        // Auto-print dialog on load (optional)
+        // window.onload = () => window.print();
+    </script>
+</body>
+</html>
